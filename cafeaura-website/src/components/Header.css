@@ -1,6 +1,5 @@
 header {
-  background-color: #000000;
-  color: white;
+  color: rgb(9, 3, 3);
   height: 45px;              /* fixed smaller height */
   padding: 0 20px;
   display: flex;
@@ -18,7 +17,7 @@ header {
 }
 
 nav a {
-  color: white;
+  color: rgb(19, 5, 5);
   text-decoration: none;
   margin: 0 8px;
   font-size: 14px;
