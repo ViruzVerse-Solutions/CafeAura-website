@@ -4,9 +4,13 @@ import Ballpit from '../components/Ballpit'
 import stickerBg from '../assets/sticker.png'
 
 const Home = () => {
+  const scrollToVideo = () => {
+    document.querySelector('.video-section').scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div>
-        <div style={{position: 'relative', overflow: 'hidden', minHeight: '100vh', maxHeight: '100vh', width: '100vw', backgroundcolor: 'var(--backgroungcolor)' }}>
+        <div className="hero-container" style={{position: 'relative', overflow: 'hidden', minHeight: '100vh', maxHeight: '100vh', width: '100vw', backgroundcolor: 'var(--backgroungcolor)' }}>
         <div 
           className="sticker-background"
           style={{
@@ -25,7 +29,31 @@ const Home = () => {
         <section className="home-hero">
           <h1 className="home-title">Cafe <span>Aura</span></h1>
           <p className="home-tagline">Order food from your college cafeteria digitally—skip the queue.</p>
+          <div className="hero-buttons">
+            <button className="btn-explore">
+              <span>Explore the Features</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            <button className="btn-demo">
+              <span>Try Demo</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M10 4L10 16M4 10L16 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
+            </button>
+          </div>
         </section>
+        <button className="scroll-arrow" onClick={scrollToVideo} aria-label="Scroll to video">
+          <div className="scroll-arrow-content">
+            <span className="scroll-text">Watch Our Video</span>
+            <div className="arrow-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M7 13L12 18L17 13M7 6L12 11L17 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </button>
         <div style={{ position: 'relative', zIndex: 2, height: '100vh', width: '100vw'}}>
           <Ballpit
               count={75}
