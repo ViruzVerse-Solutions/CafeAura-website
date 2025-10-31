@@ -1,30 +1,64 @@
 header {
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.3);
   color: white;
-  height: 45px;              /* fixed smaller height */
-  padding: 0 20px;
+  padding: 8px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;          /* 👈 makes it stick */
-  top: 0;                    /* 👈 stick to the top of the page */
-  z-index: 1000;             /* 👈 stays above other elements */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 70px;
 }
 
-.logo {
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 45px;
+.logo-section {
+  display: flex;
+  align-items: center;
 }
 
-nav a {
+.logo-img {
+  height: 60px; 
+  width: auto;
+  object-fit: contain;
+}
+
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex: 1;
+  justify-content: center;
+}
+
+.main-nav a {
   color: white;
   text-decoration: none;
-  margin: 0 8px;
-  font-size: 14px;
-  line-height: 45px;
+  font-size: 16px;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-nav a:hover {
-  text-decoration: underline;
+.main-nav a:hover {
+  color: #ffcc00;
+}
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.login-btn {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border: 1px solid white;
+  padding: 6px 14px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background-color: white;
+  color: black;
 }
