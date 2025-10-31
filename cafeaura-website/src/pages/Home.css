@@ -138,10 +138,13 @@
   gap: 8px;
 }
 
+/* Override global button:hover background for this specific button */
 .scroll-arrow:hover {
-  opacity: 1;
-  transform: translateX(-50%) translateY(5px);
+  background: transparent;
+  border: none;
 }
+
+
 
 .scroll-text {
   font-size: 0.9rem;
@@ -152,15 +155,15 @@
   transition: all 0.3s ease;
 }
 
-.scroll-arrow:hover .scroll-text {
+/* .scroll-arrow:hover .scroll-text {
   color: #d49040;
   text-shadow: 0 2px 12px rgba(229, 160, 81, 0.5);
-}
+} */
 
 .scroll-arrow svg {
   color: #e5a051;
-  filter: drop-shadow(0 2px 8px rgba(229, 160, 81, 0.5));
-}
+  /* filter: drop-shadow(0 2px 8px rgba(229, 160, 81, 0.5));*/
+} 
 
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
