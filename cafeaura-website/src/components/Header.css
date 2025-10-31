@@ -1,46 +1,49 @@
 header {
-  background-color: rgba(0, 0, 0, 0.3);
-  color: white;
-  padding: 8px 40px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  position: sticky;
+  align-items: center;
+  background-color: hsl(22, 27%, 33%);
+  color:white;
+  padding: 10px 60px;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 1000;
-  height: 70px;
 }
 
 .logo-section {
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
 .logo-img {
-  height: 60px; 
+  height: 45px; /* Adjust size if needed */
   width: auto;
   object-fit: contain;
 }
 
+.logo-text {
+  font-size: 1.5rem;
+  color: var(--white); /* Looks good over a hero image */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
 
 .main-nav {
   display: flex;
-  align-items: center;
-  gap: 40px;
-  flex: 1;
-  justify-content: center;
+  gap: 25px;
 }
 
 .main-nav a {
-  color: white;
   text-decoration: none;
-  font-size: 16px;
-  position: relative;
+  color: var(--white); /* White text for transparent background */
+  font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .main-nav a:hover {
-  color: #ffcc00;
+  color: var(--secondary-color);
 }
 
 .auth-buttons {
@@ -49,16 +52,16 @@ header {
 }
 
 .login-btn {
-  color: white;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 8px 18px;
+  border-radius: 25px;
   text-decoration: none;
-  font-size: 16px;
-  border: 1px solid white;
-  padding: 6px 14px;
-  border-radius: 4px;
-  transition: 0.3s;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.2s;
 }
 
 .login-btn:hover {
-  background-color: white;
-  color: black;
+  background-color: var(--primary-color);
+  transform: scale(1.05);
 }

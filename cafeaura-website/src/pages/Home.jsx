@@ -37,7 +37,21 @@ const Home = () => {
           />
         </div>
         </div>
-        
+        <section className="video-section">
+          <div className="video-container">
+            
+            <div className="video-wrapper">
+              <iframe
+                className="video-player"
+                src="https://www.youtube.com/embed/V5w1OGknhlc?autoplay=1&mute=1&loop=1&playlist=V5w1OGknhlc&controls=1"
+                title="Food Sample Video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </section>
     </div>
   )
 }
