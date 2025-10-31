@@ -1,53 +1,80 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Contact.css'
 
 const Contact = () => {
-  const handleSubmit = (e) => {
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    setLoading(true)
+    setError('')
+    
     const data = new FormData(e.target)
     const values = Object.fromEntries(data.entries())
-    // In this demo we just log and show a confirmation. Replace with API call as needed.
-    console.log('Contact submission:', values)
-    alert('Thanks — your message has been received (demo).')
-    e.target.reset()
+    
+    try {
+      const response = await fetch('http://localhost:3001/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values)
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message')
+      }
+
+      alert('Thank you! Your message has been sent successfully.')
+      e.target.reset()
+    } catch (err) {
+      setError('Failed to send message. Please try again later.')
+      console.error('Error:', err)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
     <div className="contact-page">
       <section className="contact-hero">
         <h2>Contact CafeAura</h2>
-        <p>Questions, feedback, or partnership inquiries? Send us a message and we'll get back to you.</p>
+        <p>Get your doubts cleared here .</p>
       </section>
 
       <form className="contact-form" onSubmit={handleSubmit}>
         <label>
-          Name
+          Name *
           <input name="name" type="text" placeholder="Your name" required />
         </label>
 
         <label>
-          Email
-          <input name="email" type="email" placeholder="you@example.com" required />
+          Email id *
+          <input name="email" type="email" placeholder="mail@id.com" required />
         </label>
 
         <label>
-          Phone 
-          <input name="phone" type="phone no" placeholder="Your phone no" required />
+          Mobile *
+          <input name="phone" type="phone no" placeholder="Your mobile no" required />
         </label>
 
         <label>
-          Organization 
+          Organization *
           <input name="organization" type="text" placeholder="Your organization" required />
         </label>
-        
+
         <label>
-          Message
+          Message *
           <textarea name="message" rows="6" placeholder="Tell us about your question or feedback" required />
         </label>
 
         <div className="contact-actions">
-          <button type="submit" className="primary">Send Message</button>
+          <button type="submit" className="primary" disabled={loading}>
+            {loading ? 'Sending...' : 'Send Message'}
+          </button>
         </div>
+        {error && <div className="error-message">{error}</div>}
       </form>
     </div>
   )

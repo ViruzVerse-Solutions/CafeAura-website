@@ -64,6 +64,20 @@
   background: #594033;
 }
 
+.contact-form .primary:disabled {
+  background: #999;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #d32f2f;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: #ffebee;
+  border-radius: 4px;
+}
+
 @media (max-width: 600px){
   .contact-page{padding:1rem}
   .contact-actions{justify-content: center}
