@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Home.css'
 import Ballpit from '../components/Ballpit'
 import stickerBg from '../assets/sticker.png'
@@ -36,12 +37,12 @@ const Home = () => {
                 <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
-            <button className="btn-demo">
+            <Link className="btn-demo" to="/demo">
               <span>Try Demo</span>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M10 4L10 16M4 10L16 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
               </svg>
-            </button>
+            </Link>
           </div>
         </section>
         <button className="scroll-arrow" onClick={scrollToVideo} aria-label="Scroll to video">
