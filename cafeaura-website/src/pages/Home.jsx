@@ -2,6 +2,7 @@ import React from 'react'
 import './Home.css'
 import Ballpit from '../components/Ballpit'
 import stickerBg from '../assets/sticker.png'
+import RotatingText from '../components/RotatingText'
 
 const Home = () => {
   const scrollToVideo = () => {
@@ -28,7 +29,29 @@ const Home = () => {
         />
         <section className="home-hero">
           <h1 className="home-title">Cafe <span>Aura</span></h1>
-          <p className="home-tagline">Order food from your college cafeteria digitally—skip the queue.</p>
+          <p className="home-tagline">Order food from your college cafeteria digitally—skip the queue.</p> 
+          <p className="home-rotator" style={{ display: 'flex', gap: '8px', alignItems: 'center', justifyContent: 'center', marginTop: '1.5rem', overflow: 'hidden', height: '3rem', fontSize: '2.5rem', fontWeight: 800, color: 'var(--primary-color)', textShadow: '0 2px 5px rgba(255, 255, 255, 0.67)'}}>
+            
+            <RotatingText
+              texts={[
+                'Ordering',
+                'Digital Menu',
+                'Cashless Payments',
+                'Preorder',
+                'No More Waiting In Line',
+                'Track Your Order',
+              ]}
+              mainClassName="inline-flex items-center justify-center"
+              staggerFrom={"last"}
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-120%" }}
+              staggerDuration={0.001}
+              splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+              transition={{ type: "spring", damping: 26, stiffness: 500 }}
+              rotationInterval={1500}
+            />
+          </p>
           <div className="hero-buttons">
             <button className="btn-explore">
               <span>Explore the Features</span>
@@ -54,6 +77,7 @@ const Home = () => {
             </div>
           </div>
         </button>
+        
         <div style={{ position: 'relative', zIndex: 2, height: '100vh', width: '100vw'}}>
           <Ballpit
               count={75}

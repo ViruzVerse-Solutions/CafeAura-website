@@ -18,6 +18,7 @@
   line-height: 1.2;
   margin: 0 0 0.5rem 0;
   font-family: 'Abril Fatface', serif;
+  color: var(--primary-color);
   span {
     font-family: 'Great Vibes', cursive;
     color:#e5a051;
@@ -25,15 +26,19 @@
 }
 
 .home-tagline {
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
-  color: #333;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  font-family: 'Abril Fatface', serif;
+  font-weight: 800;
+  color: var(--black);
   margin: 0;
+  letter-spacing: 0.2px;
+  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.689);
 }
 
 .hero-buttons {
   display: flex;
   gap: 1.5rem;
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
   z-index: 3;
