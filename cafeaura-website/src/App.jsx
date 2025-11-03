@@ -1,53 +1,26 @@
-
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
-
-// Components
-import Header from './components/Header';
-import Footer from './components/Footer';
-
-// Pages
-import Home from './pages/Home';
-// import FeaturesPage from './pages/FeaturesPage';
-// import AboutPage from './pages/AboutPage';
-// import ContactPage from './pages/ContactPage';
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Features from './pages/Features.jsx'
-import Header from './components/Header'
-import Footer from './components/Footer'
-
+import React from "react";
+import "./App.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Features from "./pages/Features";
 
 function App() {
   return (
-
-    <Router>
-      <div className="app">
-        <Header />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            {/* Uncomment below routes when those pages are ready */}
-            {/* <Route path="/features" element={<FeaturesPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/contact" element={<ContactPage />} /> */}
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
-  );
-
     <>
-    <Header />
-<Features />
-<Footer />
-    </>
-  )
+      <Header />
+      <main className="main-content">
+        <section id="home">
+          <Home />
+        </section>
 
+        <section id="features">
+          <Features />
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
 }
 
 export default App;

@@ -1,130 +1,168 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Features.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { motion } from 'framer-motion';
 import queueImg from '../assets/queue.png';
 import digitalImg from '../assets/digital.png';
 import dashboardImg from '../assets/dashboard.png';
 import billingImg from '../assets/autobilling.png';
+import demoVideo from '../assets/demo.mp4';
+
+
 
 const Features = () => {
+  useEffect(() => {
+    AOS.init({ duration: 900, once: true });
+  }, []);
+
   return (
-    <div className="features-container">
-      <div className="features-header">
-        <h1>CafeAura Features</h1>
-        <p>Skip the line, not the food. Order ahead with CafeAura and reclaim your study time!</p>
+    <div className="features-container" id="features">
+      {/* --- ENHANCED HERO SECTION (for Features Page) --- */}
+<section className="hero-section" id="features-hero">
+  <motion.div
+    className="hero-inner"
+    initial={{ opacity: 0, y: 40 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+  >
+    <div className="hero-text">
+      <h1 className="hero-title">Empowering Smarter Campus Dining</h1>
+      <p className="hero-subtitle">
+        CafeAura revolutionizes campus canteens — eliminating queues, enabling
+        quick digital payments, and providing real-time analytics for students
+        and admins alike.
+      </p>
+      <div className="hero-points-grid">
+        <div className="hero-point">
+          <span className="emoji">⚡</span>
+          <span>Solves queue & manual order issues</span>
+        </div>
+        <div className="hero-point">
+          <span className="emoji">🎓</span>
+          <span>Students order anywhere & track live</span>
+        </div>
+        <div className="hero-point">
+          <span className="emoji">💳</span>
+          <span>Secure UPI & digital payments</span>
+        </div>
+        <div className="hero-point">
+          <span className="emoji">📊</span>
+          <span>Automated reports & performance insights</span>
+        </div>
+      </div>
+    </div>
+
+  </motion.div>
+  <section className="hero-section"> ... </section>
+{/* 🎬 Product Demo Video Section */}
+<section className="video-section" data-aos="fade-up">
+  <div className="video-container">
+    <video
+      className="feature-video"
+      autoPlay
+      loop
+      muted
+      playsInline
+      controls  // ✅ shows sound and play buttons
+    >
+      <source src={demoVideo} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
+
+
+<section className="features-container"> ... </section>
+
+</section>
+
+      <div className="features-header" data-aos="fade-down">
+      
+      
       </div>
 
-      <section className="benefits-section product-benefits" aria-labelledby="product-benefits-heading">
-        <h2 id="product-benefits-heading">Product Benefits</h2>
-        <p className="text-center mb-2">CafeAura solves everyday campus dining problems by making ordering faster, smarter and contactless.</p>
-
-        <div className="benefits-grid">
-          <div className="benefit-card queue-card" role="article" aria-labelledby="b1">
-            {/* Queue illustration (larger, no SVG icon) */}
-            <img src={queueImg} className="benefit-illustration" alt="People waiting in queue at canteen" />
-            <div className="benefit-meta">
-              <h3 id="b1">Eliminates Queues</h3>
-              <p>CafeAura automates ordering, removing the need to stand in line.</p>
-            </div>
-          </div>
-
-          <div className="benefit-card" role="article" aria-labelledby="b2">
-            <img src={digitalImg} className="benefit-illustration small-illustration" alt="Digital payments illustration" />
-            <div className="benefit-meta">
-              <h3 id="b2">Digital Payments</h3>
-              <p>Secure UPI and card integration for faster transactions.</p>
-            </div>
-          </div>
-
-          <div className="benefit-card" role="article" aria-labelledby="b3">
-            <img src={dashboardImg} className="benefit-illustration small-illustration" alt="Dashboard analytics illustration" />
-            <div className="benefit-meta">
-              <h3 id="b3">Smart Dashboard</h3>
-              <p>Real-time analytics for performance tracking and better decision making.</p>
-            </div>
-          </div>
-
-          <div className="benefit-card" role="article" aria-labelledby="b4">
-            <img src={billingImg} className="benefit-illustration small-illustration" alt="Automated billing illustration" />
-            <div className="benefit-meta">
-              <h3 id="b4">Auto Billing</h3>
-              <p>No manual calculations—reports and invoices are generated instantly.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="benefits-section">
+      {/* --- STUDENT BENEFITS --- */}
+      <section className="benefits-section" data-aos="fade-up">
         <h2>Student Benefits</h2>
+        <p className="section-subtitle">Designed for speed, convenience, and campus comfort.</p>
         <div className="benefits-grid">
-          <div className="benefit-card">
+          <motion.div className="benefit-card" whileHover={{ scale: 1.03 }}>
             <h3>Campus-wide Ordering</h3>
-            <p>Order your favorite meals from anywhere on campus.</p>
-          </div>
-          <div className="benefit-card">
+            <p>Order your favorite meals from anywhere on campus effortlessly.</p>
+          </motion.div>
+          <motion.div className="benefit-card" whileHover={{ scale: 1.03 }}>
             <h3>Real-time Tracking</h3>
-            <p>Track your order status in real-time and pick up using QR code.</p>
-          </div>
-          <div className="benefit-card">
-            <h3>Digital Payments</h3>
-            <p>Enjoy hassle-free digital payment options.</p>
-          </div>
-          <div className="benefit-card">
+            <p>Track your order progress live and collect with a simple QR scan.</p>
+          </motion.div>
+          <motion.div className="benefit-card" whileHover={{ scale: 1.03 }}>
+            <h3>Secure Digital Payments</h3>
+            <p>Enjoy fast and safe payments via integrated UPI and card options.</p>
+          </motion.div>
+          <motion.div className="benefit-card" whileHover={{ scale: 1.03 }}>
             <h3>Order History</h3>
-            <p>Access your complete order history for better tracking.</p>
-          </div>
+            <p>Access your complete order history anytime for easy tracking.</p>
+          </motion.div>
         </div>
       </section>
 
-      <section className="benefits-section">
+      {/* --- MANAGEMENT BENEFITS --- */}
+      <section className="benefits-section" data-aos="fade-up">
         <h2>Management Benefits</h2>
+        <p className="section-subtitle">Empowering canteen operations with automation and insights.</p>
         <div className="benefits-grid">
-          <div className="benefit-card">
+          <motion.div className="benefit-card" whileHover={{ scale: 1.03 }}>
             <h3>Crowd Management</h3>
-            <p>Reduce crowds with streamlined order processing.</p>
-          </div>
-          <div className="benefit-card">
+            <p>Reduce congestion with streamlined digital order handling.</p>
+          </motion.div>
+          <motion.div className="benefit-card" whileHover={{ scale: 1.03 }}>
             <h3>Automated Systems</h3>
-            <p>Simplified billing and reporting through automation.</p>
-          </div>
-          <div className="benefit-card">
+            <p>Automatic billing, order logs, and performance reports at your fingertips.</p>
+          </motion.div>
+          <motion.div className="benefit-card" whileHover={{ scale: 1.03 }}>
             <h3>Data Analytics</h3>
-            <p>Gain valuable insights through sales analytics.</p>
-          </div>
-          <div className="benefit-card">
+            <p>Visual dashboards that highlight trends and sales performance.</p>
+          </motion.div>
+          <motion.div className="benefit-card" whileHover={{ scale: 1.03 }}>
             <h3>Resource Optimization</h3>
-            <p>Improve inventory management and staff efficiency.</p>
-          </div>
+            <p>Better inventory control and reduced waste with demand insights.</p>
+          </motion.div>
         </div>
       </section>
 
-      <section className="benefits-section">
-        <h2>CafeAura vs Traditional System</h2>
-        <table className="comparison-table">
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>With CafeAura</th>
-              <th>Without CafeAura</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Ordering System</td>
-              <td>Digital ordering from anywhere</td>
-              <td>Manual queues</td>
-            </tr>
-            <tr>
-              <td>Payment Method</td>
-              <td>Multiple digital payment options</td>
-              <td>Cash-only transactions</td>
-            </tr>
-            <tr>
-              <td>Management Dashboard</td>
-              <td>Comprehensive analytics dashboard</td>
-              <td>No digital insights available</td>
-            </tr>
-          </tbody>
-        </table>
+      {/* --- COMPARISON TABLE --- */}
+     <section className="comparison-section" data-aos="fade-up">
+  <h2>CafeAura vs Traditional System</h2>
+  <p className="section-subtitle">
+    Discover how CafeAura transforms your cafeteria with automation, analytics, and convenience.
+  </p>
+
+  <div className="comparison-grid">
+    <div className="comparison-card positive">
+      <h3>With CafeAura</h3>
+      <ul>
+        <li><strong>☕ Digital Ordering:</strong> Order anytime, anywhere on campus.</li>
+        <li><strong>💳 Online Payments:</strong> Secure and fast UPI or card transactions.</li>
+        <li><strong>📊 Smart Dashboard:</strong> Real-time analytics and insights.</li>
+        <li><strong>📦 Inventory Tracking:</strong> Automatic stock updates and reporting.</li>
+        <li><strong>🧾 Automated Billing:</strong> One-click invoicing and transparency.</li>
+      </ul>
+    </div>
+
+    <div className="comparison-card negative">
+      <h3>Without CafeAura</h3>
+      <ul>
+        <li><strong>🕒 Manual Queues:</strong> Long waiting times during peak hours.</li>
+        <li><strong>💰 Cash Payments:</strong> Risk of handling and slow transactions.</li>
+        <li><strong>📉 No Insights:</strong> Lack of sales and performance data.</li>
+        <li><strong>📋 Manual Inventory:</strong> Error-prone and time-consuming tracking.</li>
+        <li><strong>📠 Paper Billing:</strong> Hard to maintain and analyze.</li>
+      </ul>
+    </div>
+  </div>
+
+
       </section>
     </div>
   );
