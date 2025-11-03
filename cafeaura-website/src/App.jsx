@@ -6,25 +6,24 @@ import Home from './pages/Home'
 import Demo from './pages/Demo'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import About from './pages/About'
 
 function App() {
   return (
-    <Router>
-      <div className="app">
-        <Header />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/demo" element={<Demo />} />
-            {/* <Route path="/features" element={<FeaturesPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/contact" element={<ContactPage />} /> */}
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <div className="app">
+      <Header />
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/demo" element={<Demo />} />
+          {/* <Route path="/features" element={<FeaturesPage />} /> */}
+          <Route path="/about" element={<About />} />
+          {/* <Route path="/contact" element={<ContactPage />} /> */}
+        </Routes>
+      </main>
+      <Footer />
+    </div>
   )
 }
 

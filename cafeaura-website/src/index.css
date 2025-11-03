@@ -1,5 +1,5 @@
 :root {
-  --primary-color: hsl(24, 30%, 22%);
+  --primary-color: hsl(26, 31%, 20%);
   --secondary-color: #c49a6c;
   --accent-color: #e6c7b2;
   --background-color: #f8f5f2;
@@ -7,7 +7,7 @@
   --white: #ffffff;
   --black: #000000;
 
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: poppins, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
