@@ -25,13 +25,13 @@ const About = () => {
     <div className="about-page">
       {/* Hero Section */}
       <motion.section
-        className="hero-section"
+        className="hero-section-about"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
         <div className="hero-bg"></div>
-        <h1>ABOUT CAFEAURA</h1>
+        <h1>ABOUT <span style={{fontFamily: 'Abril Fatface'}}>Cafe<span style={{fontFamily: 'Great Vibes', color: '#e5a051'}}>Aura</span></span></h1>
 
         <p>
           " Brewing happiness, one cup at a time ☕ — Inspired by the vibrant spirit
@@ -171,7 +171,7 @@ const About = () => {
       >
         <h2> ——   JOIN OUR TEAM ☕  ——</h2>
         <p>Be part of a community that brews happiness and innovation every day.</p>
-        <button className="cta-button">Explore Careers</button>
+        <button className="">Explore Careers</button>
       </motion.section>
     </div>
   );

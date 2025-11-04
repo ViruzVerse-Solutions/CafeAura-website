@@ -5,10 +5,10 @@
   overflow-x: hidden;
 }
 
-.hero-section {
+.hero-section-about {
   position: relative;
   text-align: center;
-  padding: 50px 20px;           /* section height spacing */
+  padding: 280px 20px;           /* section height spacing */
   color: #6b4e3d;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -20,7 +20,7 @@
 }
 
 /* background image layer */
-.hero-section .hero-bg {
+.hero-section-about .hero-bg {
   position: absolute;
   inset: 0;
   background-image: url("src/assets/about bg.png");
@@ -35,8 +35,8 @@
 }
 
 /* text stays on top */
-.hero-section h1,
-.hero-section p {
+.hero-section-about h1,
+.hero-section-about p {
   position: relative;
   z-index: 1;
   max-width: 700px;
@@ -45,7 +45,7 @@
 
 /* responsive fix */
 @media (max-width: 768px) {
-  .hero-section {
+  .hero-section-about {
     padding: 60px 20px;
   }
 }
@@ -214,7 +214,7 @@ img[alt="CaféAura Journey Map"]:hover {
     align-items: center;
   }
 
-  .hero-section h1 {
+  .hero-section-about h1 {
     font-size: 2.2rem;
   }
 
