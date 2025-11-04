@@ -16,7 +16,12 @@ console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "********" : "MISSING");
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:5175",
+  methods: ["POST", "GET"],
+  credentials: true,
+}));
+
 app.use(express.json());
 
 // Create Nodemailer transporter
@@ -44,10 +49,10 @@ const transporter = nodemailer.createTransport({
     }
 })()
 
-// Email sending endpoint
-app.post('/api/send-email', async (req, res) => {
+
+app.post('/api/send-email', async (req, res) => { 
   const { name, email, phone, organization, message } = req.body;
-  console.log("📩 Received form data:", req.body);  // <--- ADD THIS LINE
+  console.log("📩 Received form data:", req.body);  
 
 
     const mailOptions = {
