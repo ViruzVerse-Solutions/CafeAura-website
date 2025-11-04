@@ -10,7 +10,6 @@ import billingImg from '../assets/autobilling.png';
 import demoVideo from '../assets/demo.mp4';
 
 
-
 const Features = () => {
   useEffect(() => {
     AOS.init({ duration: 900, once: true });

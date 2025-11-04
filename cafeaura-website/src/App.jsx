@@ -1,30 +1,26 @@
-import React from "react";
-import "./App.css";
-import Contact from "./pages/Contact";
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './App.css';
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import Features from "./pages/Features";
-
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Features from './pages/Features';
+import Contact from './pages/Contact';
 
 function App() {
   return (
-    <>
-      
+    <BrowserRouter>
       <Header />
       <main className="main-content">
-        <section id="home">
-          <Home />
-        </section>
-
-        <section id="features">
-          <Features />
-        </section>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/features" element={<Features />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </main>
-      <Contact />
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
 
