@@ -53,9 +53,9 @@ app.post('/api/send-email', async (req, res) => {
   const mailOptions = {
     from: `"CafeAura Contact" <${process.env.EMAIL_USER}>`,
     to: process.env.EMAIL_RECIPIENT,
-    subject: `Pinged by ${name}`,
+    subject: `New Submission ${name}`,
     html: `
-      <h3>Pinged by</h3>
+      <h3>New Submission</h3>
       <p><strong>Name:</strong> ${name}</p>
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Phone:</strong> ${phone}</p>
