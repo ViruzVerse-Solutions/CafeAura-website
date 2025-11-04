@@ -3,9 +3,9 @@ import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import About from "./pages/About";
 import Features from "./pages/Features";
 import Contact from "./pages/Contact";
-import About from "./pages/About";
 import Demo from "./pages/Demo";
 import { Routes, Route } from "react-router-dom";
 

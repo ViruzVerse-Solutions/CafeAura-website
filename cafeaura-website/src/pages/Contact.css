@@ -1,4 +1,4 @@
-/* 🌿 Overall Page Style */
+
 body {
   background-color: #f8f3ee;
   font-family: "Poppins", sans-serif;
@@ -7,7 +7,7 @@ body {
   color: #3e2c25;
 }
 
-/* 🧩 Contact Section Layout */
+
 .contact-container {
   display: flex;
   justify-content: center;
@@ -17,7 +17,7 @@ body {
   flex-wrap: wrap;
 }
 
-/* 🧭 Left Section */
+
 .contact-left {
   flex: 1;
   max-width: 400px;
@@ -71,7 +71,7 @@ body {
   transform: scale(1.15);
 }
 
-/* 📩 Right Section (Form) */
+
 .contact-right {
   flex: 1;
   max-width: 460px;
@@ -81,7 +81,7 @@ body {
   box-shadow: 0 6px 18px rgba(60, 40, 30, 0.1);
 }
 
-/* 🧠 Input Styles */
+
 form {
   display: flex;
   flex-direction: column;
@@ -108,7 +108,7 @@ textarea:focus {
   box-shadow: 0 0 4px rgba(180, 117, 77, 0.4);
 }
 
-/* 📱 Row for Name & Email */
+
 .name-row {
   display: flex;
   gap: 15px;
@@ -118,7 +118,6 @@ textarea:focus {
   flex: 1;
 }
 
-/* 🖱️ Button Style */
 button {
   background-color: #b4754d;
   color: #fff;
@@ -136,7 +135,6 @@ button:hover {
   transform: translateY(-2px);
 }
 
-/* 📱 Responsive Design */
 @media (max-width: 900px) {
   .contact-container {
     flex-direction: column;
