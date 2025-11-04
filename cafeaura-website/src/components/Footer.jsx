@@ -1,33 +1,76 @@
 import React from "react";
 import "./Footer.css";
-import { FaInstagram, FaTwitter, FaFacebook } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <p>© {new Date().getFullYear()} CafeAura. All Rights Reserved.</p>
+      <div className="footer-container">
 
-      <div className="social">
-        <span>Follow us: </span>
-        <a href="#" aria-label="Instagram">
-          <FaInstagram />
-        </a>
-        <a href="#" aria-label="Twitter">
-          <FaTwitter />
-        </a>
-        <a href="#" aria-label="Facebook">
-          <FaFacebook />
-        </a>
+        <div className="footer-section">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div className="footer-section">
+          <h3>Solutions</h3>
+          <ul>
+            <li><a href="#">For Students</a></li>
+            <li><a href="#">For Cafeteria Admins</a></li>
+            <li><a href="#">For Colleges</a></li>
+            <li><a href="#">For Partners</a></li>
+          </ul>
+        </div>
+
+        <div className="footer-section">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Feedback</a></li>
+          </ul>
+        </div>
+
+        <div className="footer-section">
+          <h3>Partners</h3>
+          <ul>
+            <li><a href="#">Campus Cafeterias</a></li>
+            <li><a href="#">Vendors</a></li>
+            <li><a href="#">Google Maps</a></li>
+          </ul>
+        </div>
+
+        <div className="footer-section">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+          </ul>
+        </div>
       </div>
 
-      <p>
-        <a href="#">Privacy</a> | <a href="#">Terms</a>
-      </p>
+      {/* Social Media Icons */}
+      <div className="social-icons">
+        <a href="#"><FaFacebookF /></a>
+        <a href="#"><FaInstagram /></a>
+        <a href="#"><FaTwitter /></a>
+        <a href="#"><FaLinkedinIn /></a>
+      </div>
 
-      <p className="built">Built with ❤ by Team CafeAura</p>
+      {/* Footer Bottom */}
+      <div className="footer-bottom">
+        <p>© 2025 CafeAura. All Rights Reserved.</p>
+        <p>Built with ❤️ by <strong>Team CafeAura</strong></p>
+      </div>
     </footer>
   );
 };
 
 export default Footer;
-

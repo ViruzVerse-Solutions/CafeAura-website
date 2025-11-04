@@ -1,19 +1,13 @@
-import React from 'react'
-import './App.css'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Home from './pages/Home'
-import Contact from './pages/Contact'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import React from "react";
+import "./App.css";
+import Contact from "./pages/Contact";
 
-function App(){
+function App() {
   return (
     <>
-      <Header />
-      <Contact/>
-      <Footer />
+      <Contact />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -46,14 +46,16 @@ const transporter = nodemailer.createTransport({
 
 // Email sending endpoint
 app.post('/api/send-email', async (req, res) => {
-    const { name, email, phone, organization, message } = req.body;
+  const { name, email, phone, organization, message } = req.body;
+  console.log("📩 Received form data:", req.body);  // <--- ADD THIS LINE
+
 
     const mailOptions = {
-        from: process.env.EMAIL_USER,
+        from: `"CafeAura Contact" <${process.env.EMAIL_USER}>`,
         to: process.env.EMAIL_RECIPIENT,
-        subject: `New Contact Form Submission from ${name}`,
+        subject: `Pinged by ${name}`,
         html: `
-            <h3>New Contact Form Submission</h3>
+            <h3>Pinged by</h3>
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Phone:</strong> ${phone}</p>
@@ -64,14 +66,14 @@ app.post('/api/send-email', async (req, res) => {
     };
 
     try {
-        console.log('Sending email to:', process.env.EMAIL_RECIPIENT);
-        await transporter.sendMail(mailOptions);
-        res.status(200).json({ message: 'Email sent successfully' });
-    } catch (error) {
-        console.error('Error sending email:', error);
-        // Return the error message for easier debugging (remove details in production)
-        res.status(500).json({ error: 'Failed to send email', details: error && error.message ? error.message : String(error) });
-    }
+  console.log('Sending email to:', process.env.EMAIL_RECIPIENT);
+  const info = await transporter.sendMail(mailOptions);
+  console.log('Email sent:', info);
+  res.status(200).json({ message: 'Email sent successfully' });
+} catch (error) {
+  console.error('Error sending email:', error);
+  res.status(500).json({ error: 'Failed to send email', details: error.message });
+}
 });
 
 const PORT = process.env.PORT || 3001;
