@@ -1,31 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Home from './pages/Home'
-import Demo from './pages/Demo'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import { Routes, Route } from 'react-router-dom';
-import About from './pages/About'
+import React from "react";
+import "./App.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Features from "./pages/Features";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
 
 function App() {
   return (
-    <div className="app">
+    <>
       <Header />
-      <main className="main-content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/demo" element={<Demo />} />
-          {/* <Route path="/features" element={<FeaturesPage />} /> */}
-          <Route path="/about" element={<About />} />
-          {/* <Route path="/contact" element={<ContactPage />} /> */}
-        </Routes>
+      <main>
+        <section id="home">
+          <Home />
+        </section>
+        <section id="about">
+          <About />
+        </section>
+        <section id="features">
+          <Features />
+        </section>
+
+        <section id="contact">
+          <Contact />
+        </section>
       </main>
       <Footer />
-    </div>
-  )
+    </>
+  );
 }
 
 export default App;
-
