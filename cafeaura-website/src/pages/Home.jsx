@@ -10,6 +10,13 @@ const Home = () => {
     document.querySelector('.video-section').scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToFeatures = () => {
+    const el = document.getElementById('features')
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <div>
         <div className="hero-container" style={{position: 'relative', overflow: 'hidden', minHeight: '100vh', maxHeight: '100vh', width: '100vw', backgroundcolor: 'var(--backgroungcolor)' }}>
@@ -54,7 +61,7 @@ const Home = () => {
             />
           </p>
           <div className="hero-buttons">
-            <button className="btn-explore">
+            <button className="btn-explore" onClick={scrollToFeatures} type="button">
               <span>Explore the Features</span>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
