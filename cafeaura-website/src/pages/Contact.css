@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .contact-page{
   max-width: 900px;
   margin: 3rem auto;
@@ -81,4 +82,159 @@
 @media (max-width: 600px){
   .contact-page{padding:1rem}
   .contact-actions{justify-content: center}
+=======
+/* 🌿 Overall Page Style */
+body {
+  background-color: #f8f3ee;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #3e2c25;
+}
+
+/* 🧩 Contact Section Layout */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
+  padding: 80px 10%;
+  flex-wrap: wrap;
+}
+
+/* 🧭 Left Section */
+.contact-left {
+  flex: 1;
+  max-width: 400px;
+  text-align: left;
+}
+
+.contact-left h2 {
+  font-size: 2.8rem;
+  font-weight: 1000;
+  color: #3e2c25;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-style: italic;
+  color: #b4754d;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.desc {
+  color: #5b4740;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.contact-info {
+  margin-top: 20px;
+}
+
+.contact-info p {
+  font-weight: 500;
+  color: #3e2c25;
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  margin-top: 15px;
+  font-size: 22px;
+}
+
+.social-icons i {
+  margin-right: 18px;
+  color: #b4754d;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.social-icons i:hover {
+  color: #3e2c25;
+  transform: scale(1.15);
+}
+
+/* 📩 Right Section (Form) */
+.contact-right {
+  flex: 1;
+  max-width: 460px;
+  background: #ffffff;
+  padding: 45px 40px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(60, 40, 30, 0.1);
+}
+
+/* 🧠 Input Styles */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea {
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 14px;
+  border: 1px solid #d8b49a;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  color: #3e2c25;
+  background-color: #fffaf7;
+  transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #b4754d;
+  background-color: #fff;
+  box-shadow: 0 0 4px rgba(180, 117, 77, 0.4);
+}
+
+/* 📱 Specific Row Layouts */
+.name-row {
+  display: flex;
+  gap: 15px;
+}
+
+.name-row input {
+  flex: 1;
+}
+
+button {
+  background-color: #b4754d;
+  color: #fff;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #3e2c25;
+  transform: translateY(-2px);
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 60px;
+    padding: 60px 8%;
+  }
+
+  .contact-left,
+  .contact-right {
+    max-width: 100%;
+  }
+
+  .contact-left h2 {
+    font-size: 2.4rem;
+  }
+>>>>>>> d1e7ba7376f0ef41d79a1a8a5ef7a6ba258682a8
 }
