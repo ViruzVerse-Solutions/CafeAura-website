@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React, { useState } from 'react'
 import './Contact.css'
 
@@ -82,7 +82,7 @@ const Contact = () => {
 }
 
 export default Contact
-=======
+
 import React, { useState } from "react";
 import "./Contact.css";
 
@@ -199,4 +199,4 @@ function Contact() {
 }
 
 export default Contact;
->>>>>>> d1e7ba7376f0ef41d79a1a8a5ef7a6ba258682a8
+ d1e7ba7376f0ef41d79a1a8a5ef7a6ba258682a8
