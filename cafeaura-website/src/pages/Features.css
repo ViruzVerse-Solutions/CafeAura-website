@@ -127,7 +127,7 @@
 .comparison-section {
   margin-top: 5rem;
   padding: 4rem 2rem;
-  background: linear-gradient(180deg, #0e0e0e, #161616);
+  background: linear-gradient(180deg,hsl(22, 27%, 33%), #c49a6c);
   border-radius: 20px;
   color: #fff;
   text-align: center;
@@ -196,12 +196,12 @@
   border-top: 3px solid #ff3d3d;
 }
 
-/* 🎬 VIDEO SECTION */
+
 .video-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px; /* small gap below the hero-points section */
+  margin-top: 30px; 
   margin-bottom: 60px;
   padding: 20px;
   background: linear-gradient(135deg, #fff9f3, #fff);
