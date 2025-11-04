@@ -39,10 +39,10 @@ const Demo = () => {
   const textStyle = { flex: '1 1 320px' }
 
   return (
-    <div style={{ minHeight: '100vh', background: 'linear-gradient(180deg, #f8f5f2 0%, #f3eee8 100%)' }}>
+    <div style={{ minHeight: '100vh', background: 'linear-gradient(180deg, #f8f5f2 0%, #f3eee8 100%)', paddingTop: '90px' }}>
       <style>{`
         .demo-container { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
-        .demo-title { margin: 0 0 8px 0; font-size: 28px; font-weight: 800; background: linear-gradient(90deg, #6b4e3d, #c49a6c); -webkit-background-clip: text; color: transparent; }
+        .demo-title { margin: 0 0 8px 0; font-size: 28px; font-weight: 800; color: #6b4e3d; }
         .demo-subtitle { margin: 0 0 28px 0; color: #6b6b6b; }
         .demo-row { opacity: 0; transform: translateY(24px); transition: opacity .55s ease, transform .55s ease; }
         .demo-row.visible { opacity: 1; transform: translateY(0); }
