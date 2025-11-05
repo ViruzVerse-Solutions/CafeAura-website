@@ -42,7 +42,7 @@ const Demo = () => {
     <div style={{ minHeight: '100vh', background: 'linear-gradient(180deg, #f8f5f2 0%, #f3eee8 100%)', paddingTop: '90px' }}>
       <style>{`
         .demo-container { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
-        .demo-title { margin: 0 0 8px 0; font-size: 28px; font-weight: 800; color: #6b4e3d; }
+        .demo-title { margin: 0 0 8px 0; font-size: 50px; font-weight: 800; color: #6b4e3d; }
         .demo-subtitle { margin: 0 0 28px 0; color: #6b6b6b; }
         .demo-row { opacity: 0; transform: translateY(24px); transition: opacity .55s ease, transform .55s ease; }
         .demo-row.visible { opacity: 1; transform: translateY(0); }
@@ -54,8 +54,8 @@ const Demo = () => {
         .view-full { margin-top:10px; display:inline-flex; align-items:center; gap:6px; color:#6b4e3d; font-weight:700; text-decoration:none; }
         .view-full:hover { text-decoration:underline; }
       `}</style>
-      <div className="demo-container">
-        <h2 className="demo-title">CafeAura Demo</h2>
+      <div className="demo-container" style={{textAlign: 'center'}}>
+        <h2 className="demo-title"><span style={{fontFamily: 'Abril Fatface'}}>Cafe<span style={{fontFamily: 'Great Vibes', color: '#e5a051'}}>Aura</span></span> Demo</h2>
         <p className="demo-subtitle">Modern, clean previews with subtle motion.</p>
 
         <section
