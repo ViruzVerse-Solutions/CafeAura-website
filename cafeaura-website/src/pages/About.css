@@ -23,7 +23,7 @@
 .hero-section-about .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url("src/assets/about bg.png");
+  background-image: url("../assets/aboutbg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -114,7 +114,7 @@
 /* 🔹 Title Style */
 h3 {
   text-align: center;
-  color: ;               /* CaféAura theme brown */
+  color: var(--primary-color);               /* CaféAura theme brown */
   font-size: 1.5rem;
   margin-top: 3rem;
   margin-bottom: 1rem;

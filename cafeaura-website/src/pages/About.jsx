@@ -4,7 +4,7 @@ import VanillaTilt from "vanilla-tilt";
 import { motion } from "framer-motion";
 import { FaCookieBite, FaHandHoldingHeart, FaLeaf, FaRocket, FaSmile, FaUsers } from "react-icons/fa";
 import { FaCakeCandles } from "react-icons/fa6";
-
+import journeyMap from "../assets/cafe_journey.png";
 const About = () => {
   const tiltRefs = useRef([]);
 
@@ -128,7 +128,7 @@ const About = () => {
       <center>
       <h3>| CAFEAURA JOURNEY |</h3></center>
       
-      <img src="public/cafe journey.png" alt="CaféAura Journey Map" />
+      <img src={journeyMap} alt="CaféAura Journey Map" />
 
 
       {/* Team Section */}
