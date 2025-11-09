@@ -1,11 +1,33 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './Home.css'
 import Ballpit from '../components/Ballpit'
 import stickerBg from '../assets/sticker.png'
 import RotatingText from '../components/RotatingText'
+import demoVideo from '../assets/demo.mp4'
 
 const Home = () => {
+  const [ballCount, setBallCount] = useState(75)
+
+  useEffect(() => {
+    const updateBallCount = () => {
+      const width = window.innerWidth
+      if (width <= 480) {
+        setBallCount(20) // Small mobile
+      } else if (width <= 768) {
+        setBallCount(35) // Mobile
+      } else if (width <= 968) {
+        setBallCount(50) // Tablet
+      } else {
+        setBallCount(75) // Desktop
+      }
+    }
+
+    updateBallCount()
+    window.addEventListener('resize', updateBallCount)
+    return () => window.removeEventListener('resize', updateBallCount)
+  }, [])
+
   const scrollToVideo = () => {
     document.querySelector('.video-section').scrollIntoView({ behavior: 'smooth' });
   };
@@ -19,7 +41,7 @@ const Home = () => {
 
   return (
     <div>
-        <div className="hero-container" style={{position: 'relative', overflow: 'hidden', minHeight: '100vh', maxHeight: '100vh', width: '100vw', backgroundcolor: 'var(--backgroungcolor)' }}>
+        <div className="hero-container">
         <div 
           className="sticker-background"
           style={{
@@ -38,7 +60,7 @@ const Home = () => {
         <section className="home-hero">
           <h1 className="home-title">Cafe <span>Aura</span></h1>
           <p className="home-tagline">Order food from your college cafeteria digitally—skip the queue.</p> 
-          <p className="home-rotator" style={{ display: 'flex', gap: '8px', alignItems: 'center', justifyContent: 'center', marginTop: '1.5rem', overflow: 'hidden', height: '3rem', fontSize: '2.5rem', fontWeight: 800, color: 'var(--primary-color)', textShadow: '0 2px 5px rgba(255, 255, 255, 0.67)'}}>
+          <p className="home-rotator">
             
             <RotatingText
               texts={[
@@ -88,7 +110,7 @@ const Home = () => {
         
         <div style={{ position: 'relative', zIndex: 2, height: '100vh', width: '100vw'}}>
           <Ballpit
-              count={75}
+              count={ballCount}
               gravity={0}
               friction={1}
               wallBounce={1}
@@ -101,14 +123,16 @@ const Home = () => {
           <div className="video-container">
             
             <div className="video-wrapper">
-              <iframe
+              <video
                 className="video-player"
-                src="https://www.youtube.com/embed/V5w1OGknhlc?autoplay=1&mute=1&loop=1&playlist=V5w1OGknhlc&controls=1"
+                src={demoVideo}
+                autoPlay
+                loop
+                muted
+                controls
+                playsInline
                 title="Food Sample Video"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+              ></video>
             </div>
           </div>
         </section>
